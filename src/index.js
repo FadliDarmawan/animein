@@ -4,7 +4,7 @@ const md5 = require("md5");
 const fs = require("fs");
 const { SocksProxyAgent } = require("socks-proxy-agent")
 const { convertTo64 } = require('../utils/base64');
-let httpsAgent = new SocksProxyAgent("socks5://47.243.240.46:1080" )
+// let httpsAgent = new SocksProxyAgent("socks5://47.243.240.46:1080" )
 let fileName = "AniMeXin - "+ Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 4);
 httpsAgent.timeout = 30000;
 const getAnime = (image) => {
@@ -33,7 +33,7 @@ const obj = {
     };
     const sign = signV1(obj);
         axios.request({
-            httpsAgent,
+            //httpsAgent,
             method:'POST',
             data: obj,
             url:'https://ai.tu.qq.com/trpc.shadow_cv.ai_processor_cgi.AIProcessorCgi/Process',
