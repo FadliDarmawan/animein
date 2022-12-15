@@ -96,12 +96,11 @@ const cropImage = (image) => {
  const transform = (args) => {
     return new Promise(async (resolve, reject) => {
         if (typeof args.photo === 'undefined' || args.photo === '') return reject('An image must be provided to transform...');
-        
-        const selfie = await convertTo64(args.photo);
-        //const base64Selfie = selfie.split(';base64,').pop();
-        const resizedImage = await resizeImage(selfie);
-        const resizedImage2 = await resizeImage2(selfie);
-        getAnime(resizedImage2)
+
+        const image = await convertTo64(args.photo);
+        const base64Image = image.split(';base64,').pop();
+        const resizedImage = await resizeImage(base64Image);
+        getAnime(resizedImage)
         .then(async (data) => {
             if(data.code === 0 && data.extra !== undefined && data.extra !== ''){
                 const extra = JSON.parse(data.extra);
@@ -111,11 +110,12 @@ const cropImage = (image) => {
                 resolve({
                     base64: imageCrop,
                     url: image,
-                    all: extra                   
+                    all: extra
                 });
-                fs.writeFile(`${fileName}.jpg`, imageCrop, {encoding: 'base64'}, function(err){
-  //Finished
-});
+                if (typeof args.destinyFolder !== 'undefined' && args.destinyFolder !== '') {
+                    fs.writeFile(`${args.destinyFolder}/${fileName}.jpg`, imageCrop, {encoding: 'base64'}, function(err){
+    //Finished
+            });}
             } else {
                 reject('An error occurred while trying to transform the image');
             }
