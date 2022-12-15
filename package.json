@@ -1,6 +1,6 @@
 {
   "name": "animein",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Transform your selfie into an anime image",
   "main": "./src/index.js",
   "scripts": {

@@ -100,7 +100,8 @@ const cropImage = (image) => {
         const selfie = await convertTo64(args.photo);
         //const base64Selfie = selfie.split(';base64,').pop();
         const resizedImage = await resizeImage(selfie);
-        getAnime(selfie)
+        const resizedImage2 = await resizeImage2(selfie);
+        getAnime(resizedImage2)
         .then(async (data) => {
             if(data.code === 0 && data.extra !== undefined && data.extra !== ''){
                 const extra = JSON.parse(data.extra);
