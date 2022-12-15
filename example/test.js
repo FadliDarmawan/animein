@@ -1,4 +1,4 @@
-const anime = require('selfietoanime');
+const anime = require('animein');
 const path = require('path');
 const fs = require("fs");
 
