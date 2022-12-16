@@ -4,9 +4,17 @@ Ubah gambar Anda menerapkan gaya anime / manga menggunakan AI.
 
 Requests Dari  [Photo2Cartoon](https://h5.tu.qq.com/web/ai-2d/cartoon/index) repository
 ## Installation
+```bash
+npm i git+github.com/wffzy/animein
+```
 
-    npm i animein
+<center>
+<b>OR</b>
+</center>
 
+```bash
+npm i animein
+```
 
 ## Example
 
@@ -59,4 +67,4 @@ Result
 ```
 ## Related
 
-Anda Dapat Menggu akan whatsapp bot untuk menguah nya : [AnimeIn Bot](https://github.com/wffzy/animeinbot)
+Anda Dapat Menggu akan whatsapp bot untuk menguah nya : [AnimeIn Bot](https://github.com/wffzy/animeinbot) [COMING SOON]
