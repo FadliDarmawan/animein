@@ -1,4 +1,15 @@
 # animein!
+<p align="center">
+<a target="_blank" href="https://github.com/wffzy"><img src="https://dthezntil550i.cloudfront.net/bh/latest/bh1908311051118140005937162/1280_960/2340e625-0f0e-4a48-a0fe-da83b29c1f22.png" alt="" width="169" /></a>
+</p>
+<p align="center">
+<a target="_blank" href="https://github.com/wffzy"><img title="Author" src="https://img.shields.io/badge/Author-Ditzzy-red.svg?style=for-the-badge&logo=github" /></a>
+<br>
+<a target="_blank" href="//npmjs.com/animein"><img src="https://img.shields.io/npm/dw/animein?color=yellow&label=Downloads&logo=npm&style=flat"></a>
+<br>
+<a target="_blank" href="https://www.npmjs.com/package/animein?activeTab=versions"><img src="https://img.shields.io/npm/v/animein?color=green&label=version&logo=npm&style=social"></a>
+</p>
+
 
 Ubah gambar Anda menerapkan gaya anime / manga menggunakan AI.
 
