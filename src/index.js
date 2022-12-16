@@ -67,19 +67,10 @@ const resizeImage = (image) => {
         .catch(err => reject(err));
     });
 }
-const resizeImage2 = (image) => {
-    return new Promise((resolve, reject) => {
-        sharp(new Buffer.from(image, 'base64'))
-        .toFormat('jpeg')
-        .toBuffer()
-        .then(img => resolve(img.toString('base64')))
-        .catch(err => reject(err));
-    });
-}
 const cropImage = (image) => {
     return new Promise((resolve, reject) => {
         sharp(new Buffer.from(image, 'base64'))
-        .extract({left: 0, top: 0, width: 2000, height: 1200})
+        .extract({left: 0, top: 0, width: 830, height: 1200})
         .toBuffer()
         .then(img => resolve(img.toString('base64')))
         .catch(err => reject(err));
@@ -96,10 +87,10 @@ const cropImage = (image) => {
  const transform = (args) => {
     return new Promise(async (resolve, reject) => {
         if (typeof args.photo === 'undefined' || args.photo === '') return reject('An image must be provided to transform...');
-
-        const image = await convertTo64(args.photo);
-        const base64Image = image.split(';base64,').pop();
-        const resizedImage = await resizeImage(base64Image);
+        
+        const selfie = await convertTo64(args.photo);
+        //const base64Selfie = selfie.split(';base64,').pop();
+        const resizedImage = await resizeImage(selfie);
         getAnime(resizedImage)
         .then(async (data) => {
             if(data.code === 0 && data.extra !== undefined && data.extra !== ''){
@@ -112,10 +103,6 @@ const cropImage = (image) => {
                     url: image,
                     all: extra
                 });
-                if (typeof args.destinyFolder !== 'undefined' && args.destinyFolder !== '') {
-                    fs.writeFile(`${args.destinyFolder}/${fileName}.jpg`, imageCrop, {encoding: 'base64'}, function(err){
-    //Finished
-            });}
             } else {
                 reject('An error occurred while trying to transform the image');
             }
