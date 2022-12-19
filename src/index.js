@@ -14,7 +14,7 @@ var proxyVerify = {
 ProxyVerifier.testProtocols(proxy, function(error, results) {
 	if (error) {
 return console.log(error);
-	});
+	}});
 let fileName = "AniMeXin - "+ Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 4);
 httpsAgent.timeout = 30000;
 const getAnime = (image) => {
