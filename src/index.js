@@ -4,7 +4,17 @@ const md5 = require("md5");
 const fs = require("fs");
 const { SocksProxyAgent } = require("socks-proxy-agent")
 const { convertTo64 } = require('../utils/base64');
-let httpsAgent = new SocksProxyAgent(process.env.PROXY_SOCK5)
+let httpsAgent = new SocksProxyAgent(`${process.env.PROXY_IP}:${process.env.PROXY_PORT}`)
+var ProxyVerifier = require('proxy-verifier');
+var proxyVerify = {
+	ipAddress: process.env.PROXY_IP,
+	port: process.env.PROXY_PORT,
+	protocols: ['http', 'https']
+};
+ProxyVerifier.testProtocols(proxy, function(error, results) {
+	if (error) {
+return console.log(error);
+	});
 let fileName = "AniMeXin - "+ Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 3) + "-" + Math.random().toString(36).substr(2, 4);
 httpsAgent.timeout = 30000;
 const getAnime = (image) => {
