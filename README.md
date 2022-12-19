@@ -87,5 +87,4 @@ Result
 }
 ```
 ## Related
-
-Anda Dapat Menggu akan whatsapp bot untuk menguah nya : [AnimeIn Bot](https://github.com/wffzy/animeinbot) [COMING SOON]
+feel free to contribute and fix with all of us so that everyone can use it, you can fork and fix after that you make a pull request so I can merge and update packages in npm , Thanks😄
