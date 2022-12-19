@@ -4,11 +4,13 @@ const md5 = require("md5");
 const fs = require("fs");
 const { SocksProxyAgent } = require("socks-proxy-agent")
 const { convertTo64 } = require('../utils/base64');
-let httpsAgent = new SocksProxyAgent(`${process.env.PROXY_IP}:${process.env.PROXY_PORT}`)
+const proxyIP = process.env.PROXY_IP
+const proxyPORT = process.env.PROXY_PORT
+let httpsAgent = new SocksProxyAgent(`${proxyIP}:${proxyPORT}`)
 var ProxyVerifier = require('proxy-verifier');
 var proxyVerify = {
-	ipAddress: process.env.PROXY_IP,
-	port: process.env.PROXY_PORT,
+	ipAddress: proxyIP,
+	port: proxyPORT,
 	protocols: ['http', 'https']
 };
 ProxyVerifier.testProtocols(proxy, function(error, results) {
