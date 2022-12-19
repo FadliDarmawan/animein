@@ -26,6 +26,14 @@ npm i git+github.com/wffzy/animein
 ```bash
 npm i animein
 ```
+## IMPORTANT
+Create file with name .env and fill with
+
+```env
+PROXY_SOCKS5 : <YourProxyIp:PORT>
+```
+Please use proxy socks5 from chinese
+
 
 ## Example
 
