@@ -30,8 +30,8 @@ npm i animein
 Create file with name .env and fill with
 
 ```env
-process.env.PROXY_IP : <Your Proxy IP>
-process.env.PROXY_PORT : <Your Proxy Port>
+process.env.PROXY_IP=<Your Proxy IP>
+process.env.PROXY_PORT=<Your Proxy Port>
 
 ```
 Please use proxy socks5 from chinese
